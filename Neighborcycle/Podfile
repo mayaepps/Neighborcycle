@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Neighborcycle' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Neighborcycle
+      pod 'Parse'
+      pod 'Parse/UI'
+
+  target 'NeighborcycleTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'NeighborcycleUITests' do
+    # Pods for testing
+  end
+
+end

@@ -6,6 +6,9 @@
 //
 
 #import "SignUpViewController.h"
+#import <Parse/Parse.h>
+#import "SceneDelegate.h"
+#import "AppDelegate.h"
 
 @interface SignUpViewController ()
 
@@ -32,7 +35,35 @@
 
 
 - (IBAction)didTapSignUp:(id)sender {
+    [self parseSignUp];
+}
+
+- (void) parseSignUp {
+    // Initialize a user object
+    PFUser *newUser = [PFUser user];
+        
+    // Set user properties
+    newUser.username = self.usernameField.text;
+    newUser.email = self.emailField.text;
+    newUser.password = self.passwordField.text;
+    newUser[@"location"] = [PFGeoPoint new];
+    newUser[@"phone_number"] = self.phoneNumberField.text;
     
+    // Call sign up function
+    [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+        if (error != nil) {
+            NSLog(@"Error: %@", error.localizedDescription);
+        } else {
+            NSLog(@"User registered successfully");
+            
+            // Manually switch to logged in view using root view controller
+            SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+                
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+            myDelegate.window.rootViewController = tabBarController;
+        }
+    }];
 }
 
 /*

@@ -6,10 +6,15 @@
 //
 
 #import "LoginViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
+#import "SceneDelegate.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end
 
@@ -20,6 +25,32 @@
     // Do any additional setup after loading the view.
     
 }
+
+- (IBAction)didTapLogin:(id)sender {
+    [self parseLogin];
+}
+
+- (void) parseLogin {
+    NSString *username = self.usernameField.text;
+    NSString *password = self.passwordField.text;
+    
+    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+        if (error != nil) {
+            NSLog(@"User log in failed: %@", error.localizedDescription);
+        } else {
+            NSLog(@"User logged in successfully");
+            
+            // Display tab bar controller after successful login
+            SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+                
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+            myDelegate.window.rootViewController = tabBarController;
+        }
+    }];
+}
+
+
 
 /*
 #pragma mark - Navigation

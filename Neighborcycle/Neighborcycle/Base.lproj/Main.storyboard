@@ -30,7 +30,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TXt-GC-HtD">
                                 <rect key="frame" x="50" y="472" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlN-Zo-lkm">
                                 <rect key="frame" x="310" y="522" width="54" height="30"/>
@@ -42,6 +42,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udb-k6-htf">
                                 <rect key="frame" x="50" y="522" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wdh-pP-Vnu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -68,7 +71,9 @@
                     <navigationItem key="navigationItem" id="I0M-ad-ZjO"/>
                     <connections>
                         <outlet property="loginButton" destination="Udb-k6-htf" id="2A2-AT-rM3"/>
+                        <outlet property="passwordField" destination="TXt-GC-HtD" id="wFX-jc-eF7"/>
                         <outlet property="signUpButton" destination="wlN-Zo-lkm" id="hug-j3-ab5"/>
+                        <outlet property="usernameField" destination="G3q-H1-pcN" id="23O-T1-3Sz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -85,7 +90,8 @@
                         <viewLayoutGuide key="safeArea" id="pQv-oR-wm4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="y3f-yN-ACU"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="UwE-br-myS"/>
+                    <navigationItem key="navigationItem" id="Ah7-9X-qM4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Q7-Bj-oh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,13 +107,14 @@
                         <viewLayoutGuide key="safeArea" id="1Ea-Hi-BZx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="3YC-EW-KK2"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="tkE-S0-Ukc"/>
+                    <navigationItem key="navigationItem" id="5Z6-2x-5rz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stG-qK-iwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2190" y="1523"/>
         </scene>
-        <!--Explore-->
+        <!--Expore-->
         <scene sceneID="zjX-ey-6Pw">
             <objects>
                 <viewController id="GGW-qf-0eG" sceneMemberID="viewController">
@@ -137,26 +144,27 @@
                             <constraint firstItem="dhJ-jx-ryF" firstAttribute="leading" secondItem="3Za-yX-ecy" secondAttribute="leading" constant="20" id="zvp-zn-wc1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="binoculars" catalog="system" id="3hj-Iq-5Bj"/>
+                    <tabBarItem key="tabBarItem" title="Expore" image="binoculars" catalog="system" id="Fis-d7-dMb"/>
+                    <navigationItem key="navigationItem" id="HBS-Su-fLw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIu-GH-KTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="681" y="1523"/>
+            <point key="canvasLocation" x="690" y="1523"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tSe-m7-qRr">
             <objects>
-                <tabBarController id="uPR-kU-gXF" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="8TA-yy-y41"/>
+                <tabBarController storyboardIdentifier="TabBarController" id="uPR-kU-gXF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zwV-KO-Hsg"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ESc-to-Rx1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GGW-qf-0eG" kind="relationship" relationship="viewControllers" id="Go3-Bz-O9S"/>
-                        <segue destination="dzs-R2-XDE" kind="relationship" relationship="viewControllers" id="Ood-SU-NEg"/>
-                        <segue destination="sq6-hi-3y1" kind="relationship" relationship="viewControllers" id="ybM-n1-Xhx"/>
+                        <segue destination="GGW-qf-0eG" kind="relationship" relationship="viewControllers" id="d0a-3E-hxo"/>
+                        <segue destination="dzs-R2-XDE" kind="relationship" relationship="viewControllers" id="eST-Az-gGT"/>
+                        <segue destination="sq6-hi-3y1" kind="relationship" relationship="viewControllers" id="fUL-fy-717"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfn-X4-jZB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -180,7 +188,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ogj-ac-tIi">
                                 <rect key="frame" x="50" y="316" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgG-zW-Z0G">
                                 <rect key="frame" x="180" y="822" width="54" height="30"/>
@@ -337,6 +345,7 @@
                             <constraint firstItem="gwp-6T-YpN" firstAttribute="leading" secondItem="qcL-UC-rkO" secondAttribute="leading" id="rHF-rg-SBi"/>
                             <constraint firstItem="aYD-4L-8ed" firstAttribute="top" secondItem="2Je-ZA-Txx" secondAttribute="bottom" constant="10" id="s50-Mg-hO9"/>
                             <constraint firstItem="gAv-MB-63S" firstAttribute="top" secondItem="WgY-2g-lNA" secondAttribute="bottom" constant="5" id="t9n-7B-utL"/>
+                            <constraint firstItem="zgG-zW-Z0G" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7ca-d8-Jkb" secondAttribute="bottom" constant="10" id="tFl-8b-5XW"/>
                             <constraint firstItem="aYD-4L-8ed" firstAttribute="leading" secondItem="XJO-Gc-zEw" secondAttribute="leading" constant="50" id="vUK-it-na3"/>
                             <constraint firstItem="Ogj-ac-tIi" firstAttribute="top" secondItem="XG3-ni-Fmz" secondAttribute="bottom" constant="5" id="wdz-bA-DG2"/>
                             <constraint firstItem="gwp-6T-YpN" firstAttribute="leading" secondItem="gMN-6Y-TZR" secondAttribute="trailing" constant="5" id="zA4-sl-7r9"/>
