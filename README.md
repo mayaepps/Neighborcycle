@@ -16,7 +16,7 @@ An app that facilitates the reuse of unwanted items between neighbors. If a user
 **Required Must-have Stories**
 
 - [ ] The user can create an account and fill in a profile describing their preferences and location.
-- [ ] The user can log in and out 
+- [x] The user can log in and out 
 - [ ] The user can edit their preferences in their profile
 - [ ] The user's home screen shows a list of items near their location
 - [ ] The user can create a post, including information about the age, quality, and other notes about the item
