@@ -100,15 +100,31 @@
         <!--Profile-->
         <scene sceneID="ahS-rm-aiT">
             <objects>
-                <viewController id="sq6-hi-3y1" sceneMemberID="viewController">
+                <viewController id="sq6-hi-3y1" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uBG-Xh-nMU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uN9-Bw-6cc">
+                                <rect key="frame" x="342" y="64" width="52" height="30"/>
+                                <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="didTapLogout:" destination="sq6-hi-3y1" eventType="touchUpInside" id="nxv-Mr-zdO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1Ea-Hi-BZx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Ea-Hi-BZx" firstAttribute="trailing" secondItem="uN9-Bw-6cc" secondAttribute="trailing" constant="20" id="5X7-HV-lra"/>
+                            <constraint firstItem="uN9-Bw-6cc" firstAttribute="top" secondItem="1Ea-Hi-BZx" secondAttribute="top" constant="20" id="fBk-pr-EHl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="tkE-S0-Ukc"/>
                     <navigationItem key="navigationItem" id="5Z6-2x-5rz"/>
+                    <connections>
+                        <outlet property="logOutButton" destination="uN9-Bw-6cc" id="u2F-Ee-kQe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stG-qK-iwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +133,7 @@
         <!--Expore-->
         <scene sceneID="zjX-ey-6Pw">
             <objects>
-                <viewController id="GGW-qf-0eG" sceneMemberID="viewController">
+                <viewController id="GGW-qf-0eG" customClass="ExploreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCp-pu-aF4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,6 +162,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Expore" image="binoculars" catalog="system" id="Fis-d7-dMb"/>
                     <navigationItem key="navigationItem" id="HBS-Su-fLw"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="aMT-PG-mcZ" id="1bT-a4-QZ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIu-GH-KTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -372,7 +391,7 @@
         <!--Navigation Controller-->
         <scene sceneID="46z-OV-FqE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gPh-lu-FRT" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavController" automaticallyAdjustsScrollViewInsets="NO" id="gPh-lu-FRT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NYI-l9-MFE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -49,7 +49,7 @@
     newUser[@"location"] = [PFGeoPoint new];
     newUser[@"phone_number"] = self.phoneNumberField.text;
     
-    // Call sign up function
+    // Sign up asynchronously
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
             NSLog(@"Error: %@", error.localizedDescription);
