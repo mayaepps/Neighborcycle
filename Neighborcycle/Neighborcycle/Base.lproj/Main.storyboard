@@ -195,7 +195,7 @@
         <!--Create-->
         <scene sceneID="f6r-VR-Wi3">
             <objects>
-                <viewController id="jNY-Aw-JRa" sceneMemberID="viewController">
+                <viewController id="jNY-Aw-JRa" customClass="CreateViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="55R-IJ-oLv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,6 +217,9 @@
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.app" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5w7-dW-iTG">
                                 <rect key="frame" x="20" y="220.5" width="100" height="96.5"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="6oo-jn-fAU"/>
                                     <constraint firstAttribute="height" constant="100" id="DCg-GW-jxC"/>
@@ -278,6 +281,9 @@
                                 <rect key="frame" x="189.5" y="753" width="35" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Post!"/>
+                                <connections>
+                                    <action selector="didTapPost:" destination="jNY-Aw-JRa" eventType="touchUpInside" id="HQs-sa-G0o"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Size or dimensions? Pro tips for best use? Age? " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C3R-7C-ULi">
                                 <rect key="frame" x="20" y="452" width="374" height="130"/>
@@ -322,6 +328,15 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create" image="plus" catalog="system" id="gGy-Fw-Y0c"/>
+                    <connections>
+                        <outlet property="conditionSegmentedControl" destination="XwP-8J-uoU" id="Zry-sd-OLx"/>
+                        <outlet property="itemPhoto1" destination="5w7-dW-iTG" id="hZJ-ya-Zh0"/>
+                        <outlet property="itemPhoto2" destination="BvI-Ve-Ltm" id="ba4-Z2-wYh"/>
+                        <outlet property="itemPhoto3" destination="Gcf-Qv-qtE" id="WdC-z8-a83"/>
+                        <outlet property="notesTextView" destination="C3R-7C-ULi" id="RmX-2G-tsk"/>
+                        <outlet property="postButton" destination="eVY-cr-TRZ" id="2GW-VG-jII"/>
+                        <outlet property="titleField" destination="5uC-qL-2pZ" id="5yM-r5-mfj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDK-2E-NlE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
