@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CreateViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CreateViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
 
