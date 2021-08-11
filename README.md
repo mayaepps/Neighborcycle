@@ -19,7 +19,7 @@ An app that facilitates the reuse of unwanted items between neighbors. If a user
 - [x] The user can log in and out 
 - [ ] The user can edit their preferences in their profile
 - [ ] The user's home screen shows a list of items near their location
-- [ ] The user can create a post, including information about the age, quality, and other notes about the item
+- [x] The user can create a post, including information about the age, quality, and other notes about the item
 - [ ] The user can search for items
 - [ ] The user can click on an item to be taken to a detail view of the item that includes the location of the item in Google Maps and where they can express interest in the item
 - [ ] The user can view the people who have expressed interest in their items in the profile tab
