@@ -217,18 +217,20 @@
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.app" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5w7-dW-iTG">
                                 <rect key="frame" x="20" y="220.5" width="100" height="96.5"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
-                                </accessibility>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="6oo-jn-fAU"/>
                                     <constraint firstAttribute="height" constant="100" id="DCg-GW-jxC"/>
                                 </constraints>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dAS-KJ-cge" appends="YES" id="KKM-YM-C5u"/>
+                                </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gcf-Qv-qtE">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gcf-Qv-qtE">
                                 <rect key="frame" x="294" y="220.5" width="100" height="96.5"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="GpP-ZG-i2M"/>
                                     <constraint firstAttribute="height" constant="100" id="LMv-8h-s6B"/>
@@ -237,10 +239,14 @@
                                 </constraints>
                                 <imageReference key="image" image="plus.app" catalog="system" symbolScale="default"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1ps-OJ-Phe" appends="YES" id="2kC-zL-W1U"/>
+                                </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.app" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BvI-Ve-Ltm">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.app" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BvI-Ve-Ltm">
                                 <rect key="frame" x="157" y="220.5" width="100" height="96.5"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="7l8-pX-54F"/>
                                     <constraint firstAttribute="width" constant="100" id="BNb-so-slO"/>
@@ -248,6 +254,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="ijy-ZN-AGr"/>
                                 </constraints>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Jyq-b4-fhL" appends="YES" id="pdn-Vg-WWy"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show others what this item looks like:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUc-zi-fLo">
                                 <rect key="frame" x="20" y="188" width="285" height="21"/>
@@ -339,6 +348,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDK-2E-NlE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dAS-KJ-cge">
+                    <connections>
+                        <action selector="didTapImage1:" destination="jNY-Aw-JRa" id="QMA-e8-IGr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Jyq-b4-fhL">
+                    <connections>
+                        <action selector="didTapImage2:" destination="jNY-Aw-JRa" id="Dbf-gG-qCT"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1ps-OJ-Phe">
+                    <connections>
+                        <action selector="didTapImage3:" destination="jNY-Aw-JRa" id="Vsl-fn-dxq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1360.8695652173915" y="1522.7678571428571"/>
         </scene>

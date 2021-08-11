@@ -17,11 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *notes;
 @property (nonatomic, strong) NSNumber *quality;
 
-@property (nonatomic, strong) PFFileObject *image1;
-@property (nonatomic, strong) PFFileObject *image2;
-@property (nonatomic, strong) PFFileObject *image3;
+@property (nonatomic, strong) NSMutableArray *images;
 
 @property (nonatomic, strong) NSDate *updatedAt;
+
++ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
 
 @end
 
