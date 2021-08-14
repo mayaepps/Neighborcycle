@@ -1,8 +1,8 @@
 //
-//  PostCollectionViewCell.h
+//  SearchTableViewCell.h
 //  Neighborcycle
 //
-//  Created by Maya Epps on 8/12/21.
+//  Created by Maya Epps on 8/13/21.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,16 +11,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PostCollectionViewCell : UICollectionViewCell
+@interface SearchTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet PFImageView *itemImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *itemImageView;
 @property (weak, nonatomic) IBOutlet UILabel *conditionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
-- (void)setPost:(Post *)post;
-
-+ (double) getDistanceFromPost: (Post*) post;
+- (void) setPost: (Post*) post;
 
 @end
 

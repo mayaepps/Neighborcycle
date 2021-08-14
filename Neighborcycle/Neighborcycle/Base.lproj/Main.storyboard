@@ -82,22 +82,101 @@
             </objects>
             <point key="canvasLocation" x="1439.1304347826087" y="77.678571428571431"/>
         </scene>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="uJR-da-jnf">
             <objects>
-                <viewController id="dzs-R2-XDE" sceneMemberID="viewController">
+                <viewController id="dzs-R2-XDE" customClass="SearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Iy-fa-Gy7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ora-Rt-pvw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" rowHeight="130.5" id="igq-WL-eD3" customClass="SearchTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="130.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="igq-WL-eD3" id="ceP-WJ-aAx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="130.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SgK-BQ-7g6" customClass="PFImageView">
+                                                    <rect key="frame" x="10" y="10" width="130" height="110.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="7Ff-KC-Rb8"/>
+                                                        <constraint firstAttribute="width" secondItem="SgK-BQ-7g6" secondAttribute="height" multiplier="1:1" priority="999" id="M3o-p3-zS5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good condition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eId-QJ-yAe">
+                                                    <rect key="frame" x="150" y="46.5" width="117" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blizzard fan (small)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJJ-Cc-gYn">
+                                                    <rect key="frame" x="150" y="11" width="187.5" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wbM-Tx-FM8">
+                                                    <rect key="frame" x="150" y="76.5" width="29.5" height="22"/>
+                                                    <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                    <imageReference key="image" image="car" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.5 miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBo-do-Pm8">
+                                                    <rect key="frame" x="185.5" y="77.5" width="65" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eId-QJ-yAe" firstAttribute="top" secondItem="RJJ-Cc-gYn" secondAttribute="bottom" constant="8" id="35l-N3-Eva"/>
+                                                <constraint firstItem="SgK-BQ-7g6" firstAttribute="leading" secondItem="ceP-WJ-aAx" secondAttribute="leading" constant="10" id="61G-2P-oD3"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GBo-do-Pm8" secondAttribute="trailing" constant="20" symbolic="YES" id="9Lb-gl-7wY"/>
+                                                <constraint firstItem="GBo-do-Pm8" firstAttribute="leading" secondItem="wbM-Tx-FM8" secondAttribute="trailing" constant="6" id="C3s-Cg-6ip"/>
+                                                <constraint firstItem="wbM-Tx-FM8" firstAttribute="leading" secondItem="SgK-BQ-7g6" secondAttribute="trailing" constant="10" id="DCZ-FL-LkI"/>
+                                                <constraint firstItem="SgK-BQ-7g6" firstAttribute="top" secondItem="ceP-WJ-aAx" secondAttribute="top" constant="10" id="JER-7v-BG6"/>
+                                                <constraint firstItem="wbM-Tx-FM8" firstAttribute="top" secondItem="eId-QJ-yAe" secondAttribute="bottom" constant="10" id="OhD-Mo-SSg"/>
+                                                <constraint firstItem="RJJ-Cc-gYn" firstAttribute="top" secondItem="ceP-WJ-aAx" secondAttribute="topMargin" id="YsU-SR-d1Y"/>
+                                                <constraint firstItem="eId-QJ-yAe" firstAttribute="leading" secondItem="SgK-BQ-7g6" secondAttribute="trailing" constant="10" id="i0a-de-7Ep"/>
+                                                <constraint firstItem="GBo-do-Pm8" firstAttribute="centerY" secondItem="wbM-Tx-FM8" secondAttribute="centerY" id="lAE-8a-9KT"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RJJ-Cc-gYn" secondAttribute="trailing" constant="20" symbolic="YES" id="usm-IF-gm3"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eId-QJ-yAe" secondAttribute="trailing" constant="20" symbolic="YES" id="wdN-ht-W8f"/>
+                                                <constraint firstAttribute="bottom" secondItem="SgK-BQ-7g6" secondAttribute="bottom" constant="10" id="whT-i8-Hek"/>
+                                                <constraint firstItem="RJJ-Cc-gYn" firstAttribute="leading" secondItem="SgK-BQ-7g6" secondAttribute="trailing" constant="10" id="xkx-zi-3mo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="conditionLabel" destination="eId-QJ-yAe" id="gLZ-NX-Rgr"/>
+                                            <outlet property="distanceLabel" destination="GBo-do-Pm8" id="s6V-No-Tag"/>
+                                            <outlet property="itemImageView" destination="SgK-BQ-7g6" id="Qpy-Cv-XRm"/>
+                                            <outlet property="titleLabel" destination="RJJ-Cc-gYn" id="Jcu-8x-4sM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pQv-oR-wm4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ora-Rt-pvw" firstAttribute="top" secondItem="pQv-oR-wm4" secondAttribute="top" id="J9C-sa-26Z"/>
+                            <constraint firstItem="pQv-oR-wm4" firstAttribute="bottom" secondItem="ora-Rt-pvw" secondAttribute="bottom" id="Nsq-HV-azA"/>
+                            <constraint firstItem="ora-Rt-pvw" firstAttribute="leading" secondItem="pQv-oR-wm4" secondAttribute="leading" id="YbH-tU-WDZ"/>
+                            <constraint firstItem="pQv-oR-wm4" firstAttribute="trailing" secondItem="ora-Rt-pvw" secondAttribute="trailing" id="qJG-Q0-8jD"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="UwE-br-myS"/>
                     <navigationItem key="navigationItem" id="Ah7-9X-qM4"/>
+                    <connections>
+                        <outlet property="searchTableView" destination="ora-Rt-pvw" id="l78-eo-u2v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Q7-Bj-oh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2113" y="1523"/>
+            <point key="canvasLocation" x="2112" y="2211"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ahS-rm-aiT">
@@ -130,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stG-qK-iwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2839" y="1523"/>
+            <point key="canvasLocation" x="2826" y="1523"/>
         </scene>
         <!--Expore-->
         <scene sceneID="zjX-ey-6Pw">
@@ -257,7 +336,7 @@
                     <connections>
                         <segue destination="GGW-qf-0eG" kind="relationship" relationship="viewControllers" id="d0a-3E-hxo"/>
                         <segue destination="jNY-Aw-JRa" kind="relationship" relationship="viewControllers" id="Qzf-O9-2tX"/>
-                        <segue destination="dzs-R2-XDE" kind="relationship" relationship="viewControllers" id="eST-Az-gGT"/>
+                        <segue destination="4GE-y3-ZnO" kind="relationship" relationship="viewControllers" id="eST-Az-gGT"/>
                         <segue destination="sq6-hi-3y1" kind="relationship" relationship="viewControllers" id="fUL-fy-717"/>
                     </connections>
                 </tabBarController>
@@ -659,9 +738,29 @@
             </objects>
             <point key="canvasLocation" x="528.98550724637687" y="77.678571428571431"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="e3c-mO-aoP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4GE-y3-ZnO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="UwE-br-myS"/>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jP5-Yz-uko">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dzs-R2-XDE" kind="relationship" relationship="rootViewController" id="LXA-18-PU8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLV-E9-MSO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111.594202898551" y="1522.7678571428571"/>
+        </scene>
     </scenes>
     <resources>
         <image name="binoculars" catalog="system" width="128" height="90"/>
+        <image name="car" catalog="system" width="128" height="93"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" catalog="system" width="128" height="113"/>
