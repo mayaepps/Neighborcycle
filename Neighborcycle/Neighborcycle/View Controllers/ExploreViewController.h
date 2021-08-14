@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ExploreViewController : UIViewController
+@interface ExploreViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @end
 
