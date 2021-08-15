@@ -8,6 +8,7 @@
 #import "SearchViewController.h"
 #import "SearchTableViewCell.h"
 #import "Post.h"
+#import "PostDetailViewController.h"
 
 @interface SearchViewController ()
 
@@ -41,15 +42,25 @@
     self.definesPresentationContext = YES;
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// Preparation for navigation to post detail view.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    UINavigationController *controller = [segue destinationViewController];
+    
+    if ([controller class] == [PostDetailViewController class]) {
+        // Cast the sender to UITableViewCell
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.searchTableView indexPathForCell:cell];
+        Post *post = self.posts[indexPath.row];
+            
+        PostDetailViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.post = post;
+    }
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     

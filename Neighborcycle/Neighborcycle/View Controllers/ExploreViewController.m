@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 #import "Post.h"
 #import "PostCollectionViewCell.h"
+#import "PostDetailViewController.h"
 
 @interface ExploreViewController ()
 
@@ -54,15 +55,24 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ // Preparation for navigation to post detail view.
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     
+     UINavigationController *controller = [segue destinationViewController];
+     
+     if ([controller class] == [PostDetailViewController class]) {
+         // Cast the sender to UICollectionViewCell
+         UICollectionViewCell *cell = sender;
+         NSIndexPath *indexPath = [self.postsCollectionView indexPathForCell:cell];
+         Post *post = self.posts[indexPath.row];
+             
+         PostDetailViewController *detailsViewController = [segue destinationViewController];
+         detailsViewController.post = post;
+     }
+ }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
