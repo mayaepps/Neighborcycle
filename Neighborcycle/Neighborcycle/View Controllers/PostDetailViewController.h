@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PostDetailViewController : UIViewController
+@interface PostDetailViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property Post *post;
 
