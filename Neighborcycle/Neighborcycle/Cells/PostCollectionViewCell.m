@@ -20,7 +20,8 @@
     NSArray *conditions = @[@"Poor condition", @"Fair condition", @"Good condition", @"Very good condition", @"As new condition"];
     self.conditionLabel.text = conditions[post.quality.intValue];
 
-    self.distanceLabel.text = [NSString stringWithFormat:@"%f mi", [PostCollectionViewCell getDistanceFromPost:post]];
+    double distance = [PostCollectionViewCell getDistanceFromPost:post];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%0.2f mi", distance];
     
     self.titleLabel.text = post.title;
 }

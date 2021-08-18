@@ -37,5 +37,9 @@
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
++ (NSString *)getConditionFromIndex: (NSNumber *) number {
+    NSArray *conditions = @[@"Poor condition", @"Fair condition", @"Good condition", @"Very good condition", @"As new condition"];
+    return conditions[number.intValue];
+}
 
 @end

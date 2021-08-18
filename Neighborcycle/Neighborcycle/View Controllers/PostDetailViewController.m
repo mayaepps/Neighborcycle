@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *imagesCollectionView;
 @property (weak, nonatomic) IBOutlet UIButton *expressInterestButton;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UILabel *postedByLabel;
+@property (weak, nonatomic) IBOutlet UILabel *conditionLabel;
 
 @end
 
@@ -28,11 +30,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.view bringSubviewToFront: self.expressInterestButton];
+    
+    self.expressInterestButton.layer.shadowColor = UIColor.grayColor.CGColor;
+    self.expressInterestButton.layer.shadowOffset = CGSizeMake(5, 5);
+    self.expressInterestButton.layer.shadowRadius = 5;
+    self.expressInterestButton.layer.shadowOpacity = 1.0;
+    
     self.imagesCollectionView.delegate = self;
     self.imagesCollectionView.dataSource = self;
     
     self.titleLabel.text = self.post.title;
     self.notesLabel.text = self.post.notes;
+    
+    self.conditionLabel.text = [Post getConditionFromIndex: self.post.quality];
+    self.postedByLabel.text = [NSString stringWithFormat: @"Posted by %@", self.post.author.username];
     
     self.expressInterestButton.layer.cornerRadius = 10;
     

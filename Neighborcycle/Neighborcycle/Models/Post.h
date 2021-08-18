@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
 
++ (NSString *)getConditionFromIndex: (NSNumber *) number;
+
 @end
 
 NS_ASSUME_NONNULL_END
