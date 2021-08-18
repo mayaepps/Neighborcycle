@@ -11,6 +11,7 @@
 #import <Parse/PFGeoPoint.h>
 #import <MapKit/MKPointAnnotation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Post.h"
 
 @interface PostDetailViewController ()
 
@@ -57,6 +58,19 @@
 
 - (IBAction)didExpressInterest:(id)sender {
     NSLog(@"Expressed interest in this item");
+    if (self.post.interestedUsers == nil) {
+        self.post.interestedUsers = [NSArray new];
+    }
+    self.post.interestedUsers = [self.post.interestedUsers arrayByAddingObject:PFUser.currentUser];
+    [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error saving interest request: %@", error.localizedDescription);
+        } else {
+            NSLog(@"Request saved successfully!");
+            
+            [self.expressInterestButton setTitle:@"Interest Expressed!" forState:UIControlStateNormal];
+        }
+    }];
 }
 
 /*

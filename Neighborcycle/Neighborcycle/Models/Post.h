@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSDate *updatedAt;
 
+@property (nonatomic, strong) NSArray *interestedUsers;
+
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
 
 @end

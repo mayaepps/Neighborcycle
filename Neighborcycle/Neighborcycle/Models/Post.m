@@ -15,6 +15,7 @@
 @dynamic quality;
 @dynamic images;
 @dynamic updatedAt;
+@dynamic interestedUsers;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";

@@ -48,6 +48,7 @@
     newPost.title = self.titleField.text;
     newPost.notes = self.notesTextView.text;
     newPost.quality = @(self.conditionSegmentedControl.selectedSegmentIndex);
+    newPost.interestedUsers = [NSArray new];
     
     newPost.images = [self convertImagesToPFFiles: self.itemPhotos];
     
