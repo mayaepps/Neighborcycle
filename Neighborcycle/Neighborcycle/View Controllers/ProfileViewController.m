@@ -6,14 +6,18 @@
 //
 
 #import "ProfileViewController.h"
-#import <Parse/Parse.h>
 #import "AppDelegate.h"
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
+#import <Parse/Parse.h>
 
 @interface ProfileViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *logOutButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *logOutButton;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
 @end
 
@@ -22,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.nameLabel.text = PFUser.currentUser.username;
+    self.addressLabel.text = PFUser.currentUser[@"address"];
 }
 
 - (IBAction)didTapLogout:(id)sender {

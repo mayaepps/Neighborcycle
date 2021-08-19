@@ -52,7 +52,7 @@
             
             geopoint.latitude = coordinate.latitude;
             geopoint.longitude = coordinate.longitude;
-            [self parseSignUpWithGeoPoint: geopoint];
+            [self parseSignUpWithGeoPoint: geopoint withAddress: fullAddress];
             
         } else {
             //TODO: make an error message to display to the user
@@ -62,7 +62,7 @@
 }
 
 // Signs a new user up in Parse given a PFGeoPoint using the user's responses.
-- (void) parseSignUpWithGeoPoint: (PFGeoPoint*) geoPoint {
+- (void) parseSignUpWithGeoPoint: (PFGeoPoint*) geoPoint withAddress: (NSString *) address {
     
     // Initialize a user object
     PFUser *newUser = [PFUser user];
@@ -73,6 +73,7 @@
     newUser.password = self.passwordField.text;
     newUser[@"location"] = geoPoint;
     newUser[@"phone_number"] = self.phoneNumberField.text;
+    newUser[@"address"] = address;
     
     // Sign up asynchronously
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
