@@ -20,7 +20,11 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
+@property (weak, nonatomic) IBOutlet UILabel *numberPostsLabel;
 @property (weak, nonatomic) IBOutlet UIView *backgroundColorView;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+
 
 @property (strong, nonatomic) NSArray *userPosts;
 
@@ -32,14 +36,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.nameLabel.text = PFUser.currentUser.username;
-    self.addressLabel.text = PFUser.currentUser[@"address"];
-    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
     [self getUsersPosts];
 }
+
 
 - (void) getUsersPosts {
     // construct PFQuery
@@ -55,6 +57,7 @@
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             self.userPosts = posts;
+            self.numberPostsLabel.text = [NSString stringWithFormat: @"%i", (int) posts.count];
             [self.collectionView reloadData];
         } else {
             NSLog(@"Error searching Neighborcycle posts: %@", error.localizedDescription);
@@ -84,6 +87,14 @@
  
 }
 */
+
+- (void)viewDidAppear:(BOOL)animated {
+    PFUser *user = PFUser.currentUser;
+    self.nameLabel.text = user.username;
+    self.addressLabel.text = user[@"address"];
+    self.emailLabel.text = user.email;
+    self.phoneLabel.text = user[@"phone_number"];
+}
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
