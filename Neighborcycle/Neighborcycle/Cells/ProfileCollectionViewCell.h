@@ -7,12 +7,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import <Parse/PFImageView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProfileCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet PFImageView *imageView;
 
 @property (strong, nonatomic) Post *post;
 
