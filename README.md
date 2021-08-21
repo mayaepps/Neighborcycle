@@ -13,7 +13,7 @@ Here is a Gif of my progress as of August 19, 2021:
 (The UI is not finished yet as I have been focused on getting the functionality down)
 
 <img src="neighborcycle.gif" width="300" height="600" />
-<img src="neighborcycle2.gif" width="300" height="600" />
+<img src="neighborcycleProfile.gif" width="300" height="600" />
 
 ## Product Spec
 
