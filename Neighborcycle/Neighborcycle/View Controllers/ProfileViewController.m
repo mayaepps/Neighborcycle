@@ -11,6 +11,8 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 #import "ProfileCollectionViewCell.h"
+#import "PostProfileViewController.h"
+
 
 @interface ProfileViewController ()
 
@@ -79,14 +81,26 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    UINavigationController *controller = [segue destinationViewController];
+    
+    if ([controller class] == [PostProfileViewController class]) {
+        // Cast the sender to UICollectionViewCell
+        ProfileCollectionViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+        Post *post = self.userPosts[indexPath.row];
+            
+        PostProfileViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.post = post;
+    } 
  
 }
-*/
+
 
 - (void)viewDidAppear:(BOOL)animated {
     PFUser *user = PFUser.currentUser;
@@ -94,6 +108,7 @@
     self.addressLabel.text = user[@"address"];
     self.emailLabel.text = user.email;
     self.phoneLabel.text = user[@"phone_number"];
+    [self getUsersPosts];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {

@@ -36,7 +36,6 @@
     self.expressInterestButton.layer.shadowOffset = CGSizeMake(5, 5);
     self.expressInterestButton.layer.shadowRadius = 5;
     self.expressInterestButton.layer.shadowOpacity = 1.0;
-    
     self.imagesCollectionView.delegate = self;
     self.imagesCollectionView.dataSource = self;
     
