@@ -20,13 +20,6 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)didTapPhone:(id)sender {
-    
-
-}
-
-- (IBAction)didTapMail:(id)sender {
-}
 
 
 @end

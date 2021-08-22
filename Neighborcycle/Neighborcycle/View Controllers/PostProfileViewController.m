@@ -9,6 +9,7 @@
 #import "NeighborCell.h"
 #import "UserPostImageCell.h"
 #import <Parse/PFImageView.h>
+#import "UserInfoPopupViewController.h"
 
 @interface PostProfileViewController ()
 
@@ -45,15 +46,24 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    UINavigationController *controller = [segue destinationViewController];
+    
+    if ([controller class] == [UserInfoPopupViewController class]) {
+        // Cast the sender to UICollectionViewCell
+        NeighborCell *cell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        PFUser *user = self.post.interestedUsers[indexPath.item];
+            
+        UserInfoPopupViewController *newViewController = [segue destinationViewController];
+        newViewController.user = user;
+    }
 }
-*/
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
@@ -86,5 +96,6 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.post.interestedUsers.count;
 }
+
 
 @end
