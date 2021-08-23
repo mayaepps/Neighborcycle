@@ -19,57 +19,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neighborcycle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="W33-OG-LeI">
-                                <rect key="frame" x="50" y="278" width="314" height="40"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3q-H1-pcN">
-                                <rect key="frame" x="50" y="348" width="314" height="34"/>
+                                <rect key="frame" x="50" y="433" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TXt-GC-HtD">
-                                <rect key="frame" x="50" y="402" width="314" height="34"/>
+                                <rect key="frame" x="50" y="487" width="314" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlN-Zo-lkm">
-                                <rect key="frame" x="310" y="452" width="54" height="30"/>
-                                <state key="normal" title="Sign Up"/>
+                                <rect key="frame" x="310" y="537" width="54" height="30"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" name="PrimaryBlue"/>
+                                </state>
                                 <connections>
                                     <segue destination="YmR-bB-Nyi" kind="show" id="Wlv-r8-X2K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udb-k6-htf">
-                                <rect key="frame" x="50" y="452" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <rect key="frame" x="50" y="537" width="38" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" name="PrimaryBlue"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wdh-pP-Vnu"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-screen-logo" translatesAutoresizingMaskIntoConstraints="NO" id="z1p-UF-ba9">
+                                <rect key="frame" x="50" y="273" width="314" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ngB-ns-4XM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wlN-Zo-lkm" firstAttribute="trailing" secondItem="TXt-GC-HtD" secondAttribute="trailing" id="2LU-WW-HK5"/>
+                            <constraint firstItem="z1p-UF-ba9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="2Xf-hI-6ko"/>
                             <constraint firstItem="TXt-GC-HtD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6kS-De-EiW"/>
                             <constraint firstItem="G3q-H1-pcN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7X5-Kz-Q0o"/>
-                            <constraint firstItem="TXt-GC-HtD" firstAttribute="trailing" secondItem="W33-OG-LeI" secondAttribute="trailing" id="9QR-ft-sbW"/>
+                            <constraint firstItem="G3q-H1-pcN" firstAttribute="leading" secondItem="z1p-UF-ba9" secondAttribute="leading" id="7ad-aj-FKR"/>
                             <constraint firstItem="wlN-Zo-lkm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Udb-k6-htf" secondAttribute="trailing" constant="20" id="Dt4-gh-x21"/>
-                            <constraint firstItem="W33-OG-LeI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="F2H-pc-vee"/>
+                            <constraint firstItem="z1p-UF-ba9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="Fzd-K5-Qo8"/>
                             <constraint firstItem="Udb-k6-htf" firstAttribute="top" secondItem="TXt-GC-HtD" secondAttribute="bottom" constant="16" id="J8l-xF-xBT"/>
                             <constraint firstItem="wlN-Zo-lkm" firstAttribute="top" secondItem="TXt-GC-HtD" secondAttribute="bottom" constant="16" id="JW6-nw-r6F"/>
-                            <constraint firstItem="G3q-H1-pcN" firstAttribute="leading" secondItem="W33-OG-LeI" secondAttribute="leading" id="P18-U8-fY5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W33-OG-LeI" secondAttribute="trailing" constant="50" id="VhA-xW-9Tp"/>
-                            <constraint firstItem="G3q-H1-pcN" firstAttribute="trailing" secondItem="W33-OG-LeI" secondAttribute="trailing" id="b0X-d1-ZNg"/>
-                            <constraint firstItem="G3q-H1-pcN" firstAttribute="top" secondItem="W33-OG-LeI" secondAttribute="bottom" constant="30" id="brm-bO-Fae"/>
+                            <constraint firstItem="G3q-H1-pcN" firstAttribute="top" secondItem="z1p-UF-ba9" secondAttribute="bottom" constant="10" id="Rbd-rz-Vts"/>
+                            <constraint firstItem="TXt-GC-HtD" firstAttribute="trailing" secondItem="z1p-UF-ba9" secondAttribute="trailing" id="bSH-nP-TF2"/>
                             <constraint firstItem="TXt-GC-HtD" firstAttribute="top" secondItem="G3q-H1-pcN" secondAttribute="bottom" constant="20" id="diw-Ny-Bzx"/>
-                            <constraint firstItem="W33-OG-LeI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n1k-Ln-Zhc"/>
-                            <constraint firstItem="W33-OG-LeI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="oo9-Ca-Nj9"/>
-                            <constraint firstItem="TXt-GC-HtD" firstAttribute="leading" secondItem="W33-OG-LeI" secondAttribute="leading" id="ram-f9-6pg"/>
+                            <constraint firstItem="TXt-GC-HtD" firstAttribute="leading" secondItem="z1p-UF-ba9" secondAttribute="leading" id="gj5-Jz-9RT"/>
                             <constraint firstItem="Udb-k6-htf" firstAttribute="leading" secondItem="TXt-GC-HtD" secondAttribute="leading" id="rmv-lR-r0r"/>
+                            <constraint firstItem="G3q-H1-pcN" firstAttribute="trailing" secondItem="z1p-UF-ba9" secondAttribute="trailing" id="ymj-6u-maZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z1p-UF-ba9" secondAttribute="trailing" constant="50" id="zpm-bm-tNW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I0M-ad-ZjO"/>
@@ -1339,7 +1342,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgG-zW-Z0G">
                                 <rect key="frame" x="180" y="822" width="54" height="30"/>
-                                <state key="normal" title="Sign Up"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" name="PrimaryBlue"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapSignUp:" destination="YmR-bB-Nyi" eventType="touchUpInside" id="Zqb-ca-0RE"/>
                                 </connections>
@@ -1606,6 +1611,7 @@
         <image name="car" catalog="system" width="128" height="93"/>
         <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="home-screen-logo" width="972" height="490"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="mail" catalog="system" width="128" height="93"/>
         <image name="person" catalog="system" width="128" height="117"/>
@@ -1615,7 +1621,7 @@
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="square.on.square" catalog="system" width="128" height="113"/>
         <namedColor name="PrimaryBlue">
-            <color red="0.46666666666666667" green="0.59607843137254901" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.41176470588235292" green="0.55686274509803924" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
