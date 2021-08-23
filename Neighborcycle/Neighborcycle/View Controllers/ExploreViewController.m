@@ -85,11 +85,26 @@
     cell.itemImageView.layer.cornerRadius = 15;
     cell.itemImageView.clipsToBounds = YES;
     
+    cell.contentView.layer.cornerRadius = 15;
+    cell.contentView.layer.masksToBounds = YES;
+    cell.layer.cornerRadius = 15;
+    cell.clipsToBounds = YES;
+
+    cell.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.layer.shadowOffset = CGSizeMake(0, 2.0f);
+    cell.layer.shadowRadius = 3;
+    cell.layer.shadowOpacity = 0.2f;
+    cell.layer.masksToBounds = NO;
+    
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.posts.count;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(10, 10, 10, 10); // top, left, bottom, right
 }
 
 @end

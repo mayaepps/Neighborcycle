@@ -12,6 +12,10 @@
 
 @implementation PostCollectionViewCell
 
+- (void)viewDidLoad {
+    [self viewDidLoad];
+}
+
 - (void)setPost:(Post *)post {
     NSLog(@"%@", post);
     self.itemImageView.file = post.images[0];
