@@ -1197,7 +1197,7 @@
                                     <action selector="didTapPost:" destination="jNY-Aw-JRa" eventType="touchUpInside" id="HQs-sa-G0o"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Size or dimensions? Pro tips for best use? Age? " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C3R-7C-ULi">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C3R-7C-ULi">
                                 <rect key="frame" x="20" y="482" width="374" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
