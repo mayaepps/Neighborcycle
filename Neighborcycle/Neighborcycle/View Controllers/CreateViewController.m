@@ -43,6 +43,18 @@
 
 - (IBAction)didTapPost:(id)sender {
     
+    if (self.itemPhotos.count < 1) {
+        // Create an alert for the error
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Add an image!" message:@"Please add an image of your item so your neighbors can see what the item looks like." preferredStyle: (UIAlertControllerStyleAlert)];
+        // create an OK action
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [self presentViewController:alert animated:YES completion:^{}];
+        // add the OK action to the alert controller
+        [alert addAction:okAction];
+        return;
+    }
+    
     Post *newPost = [Post new];
     newPost.author = [PFUser currentUser];
     newPost.title = self.titleField.text;

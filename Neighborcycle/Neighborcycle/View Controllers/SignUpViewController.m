@@ -35,6 +35,23 @@
 }
 
 - (IBAction)didTapSignUp:(id)sender {
+    
+    if (self.usernameField.text.length == 0 || self.passwordField.text.length == 0 ||
+        self.emailField.text.length == 0 || self.streetAddressField.text.length == 0 ||
+        self.cityField.text.length == 0 || self.stateField.text.length == 0 ||
+        self.phoneNumberField.text.length == 0) {
+        
+        // Create an alert for the error
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Signup Error" message:@"Please fill in all text fields." preferredStyle: (UIAlertControllerStyleAlert)];
+        // create an OK action
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            self.passwordField.text = @"";
+        }];
+        [self presentViewController:alert animated:YES completion:^{}];
+        // add the OK action to the alert controller
+        [alert addAction:okAction];
+    }
+    
     NSString *fullAddress = [NSString stringWithFormat: @"%@, %@, %@ %@", self.streetAddressField.text, self.cityField.text, self.stateField.text, self.zipCodeField.text];
     [self getGeoPointFromAddress:fullAddress];
 }

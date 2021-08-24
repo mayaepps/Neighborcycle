@@ -38,6 +38,16 @@
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
             NSLog(@"User log in failed: %@", error.localizedDescription);
+            // Create an alert for the error
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login Error" message:error.localizedDescription preferredStyle: (UIAlertControllerStyleAlert)];
+            // create an OK action
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                self.passwordField.text = @"";
+            }];
+            [self presentViewController:alert animated:YES completion:^{}];
+            // add the OK action to the alert controller
+            [alert addAction:okAction];
+            
         } else {
             NSLog(@"User logged in successfully");
             

@@ -92,7 +92,7 @@
             <objects>
                 <viewController id="T6b-oo-Onz" customClass="PostDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KPh-Xs-UjQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2r-yS-3PC">
@@ -467,7 +467,6 @@
                                                 <constraint firstAttribute="bottom" secondItem="k0c-E9-D6t" secondAttribute="bottom" id="nmv-f7-WaA"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" name="PrimaryBlue"/>
                                         <connections>
                                             <outlet property="imageView" destination="k0c-E9-D6t" id="NFH-Om-xK3"/>
                                             <segue destination="PAh-6d-DL7" kind="show" id="X6F-9e-3t1"/>
