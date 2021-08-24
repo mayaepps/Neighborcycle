@@ -12,7 +12,7 @@ An app that facilitates the reuse of unwanted items between neighbors. If a user
 Here is a Gif of my progress as of August 23rd , 2021:
 (The UI is not finished yet as I have been focused on getting the functionality down)
 
-<img src="neighborcycle_8:23.gif" width="300" height="600" />
+<img src="neighborcycle.gif" width="300" height="600" />
 
 ## Product Spec
 
