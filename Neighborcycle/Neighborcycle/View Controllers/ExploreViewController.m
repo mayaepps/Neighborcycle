@@ -42,6 +42,7 @@
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     [postQuery includeKey:@"images"];
+    [postQuery whereKey:@"author" notEqualTo:PFUser.currentUser];
     
     postQuery.limit = 20;
 

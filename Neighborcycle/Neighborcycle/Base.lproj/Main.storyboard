@@ -92,7 +92,7 @@
             <objects>
                 <viewController id="T6b-oo-Onz" customClass="PostDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KPh-Xs-UjQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2r-yS-3PC">
@@ -439,7 +439,7 @@
                                     <segue destination="AoH-Qj-E86" kind="show" id="XRq-9c-sS0"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YOd-MT-yFd">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOd-MT-yFd">
                                 <rect key="frame" x="0.0" y="318.5" width="414" height="445.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vCT-ag-npj">
@@ -467,6 +467,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="k0c-E9-D6t" secondAttribute="bottom" id="nmv-f7-WaA"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="PrimaryBlue"/>
                                         <connections>
                                             <outlet property="imageView" destination="k0c-E9-D6t" id="NFH-Om-xK3"/>
                                             <segue destination="PAh-6d-DL7" kind="show" id="X6F-9e-3t1"/>
@@ -591,6 +592,7 @@
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="lZw-8K-PIz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z0J-rV-qDX" secondAttribute="trailing" constant="8" symbolic="YES" id="6fW-xj-mC8"/>
                                                                 <constraint firstItem="z0J-rV-qDX" firstAttribute="centerY" secondItem="APa-Pn-OdF" secondAttribute="centerY" id="CU2-xN-PzG"/>
                                                                 <constraint firstAttribute="trailing" secondItem="lZw-8K-PIz" secondAttribute="trailing" constant="20" id="DV7-M3-owS"/>
                                                                 <constraint firstItem="lZw-8K-PIz" firstAttribute="centerY" secondItem="z0J-rV-qDX" secondAttribute="centerY" id="PcC-Rz-Dsl"/>
@@ -1129,7 +1131,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ESc-to-Rx1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="PrimaryBlue"/>
                     </tabBar>
                     <connections>
                         <segue destination="e9U-69-pOR" kind="relationship" relationship="viewControllers" id="enU-mi-mnM"/>
@@ -1189,7 +1191,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVY-cr-TRZ">
                                 <rect key="frame" x="189.5" y="753" width="35" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Post!"/>
+                                <state key="normal" title="Post!">
+                                    <color key="titleColor" name="PrimaryBlue"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapPost:" destination="jNY-Aw-JRa" eventType="touchUpInside" id="HQs-sa-G0o"/>
                                 </connections>
@@ -1253,6 +1257,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sfV-Kx-goj">
                                                     <rect key="frame" x="0.0" y="0.5" width="70" height="69"/>
+                                                    <color key="tintColor" name="PrimaryBlue"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="0vC-hz-a5S"/>

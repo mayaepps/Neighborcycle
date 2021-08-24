@@ -47,16 +47,16 @@
 
 - (void) getUsersPosts {
     // construct PFQuery
-    PFQuery *postQuery = [Post query];
-    [postQuery orderByDescending:@"createdAt"];
-    [postQuery includeKey:@"author"];
-    [postQuery includeKey:@"images"];
-    [postQuery whereKey:@"author" equalTo:PFUser.currentUser];
+    PFQuery *userQuery = [Post query];
+    [userQuery orderByDescending:@"createdAt"];
+    [userQuery includeKey:@"author"];
+    [userQuery includeKey:@"images"];
+    [userQuery whereKey:@"author" equalTo:PFUser.currentUser];
     
-    postQuery.limit = 20;
+    userQuery.limit = 20;
 
     // fetch data asynchronously
-    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+    [userQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             self.userPosts = posts;
             self.numberPostsLabel.text = [NSString stringWithFormat: @"%i", (int) posts.count];
@@ -118,6 +118,7 @@
      //Configure the cell:
     Post *post = self.userPosts[indexPath.item];
     cell.imageView.file = post.images[0];
+    [cell.imageView loadInBackground];
 
     return cell;
 }
