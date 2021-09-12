@@ -9,7 +9,7 @@
 ### Description
 An app that facilitates the reuse of unwanted items between neighbors. If a user has an item they would like to get rid of, they can post the item. Neighbors can view posted items and, if they like the item, can express interest in it.
 
-Here is a Gif of my progress as of August 23rd , 2021:
+I made this app over the summer of 2021 to help teach myself iOS development. Here is a Gif of my progress as of August 23rd , 2021:
 (The UI is not finished yet as I have been focused on getting the functionality down)
 
 <img src="neighborcycle.gif" width="300" height="600" />
